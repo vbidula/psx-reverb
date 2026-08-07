@@ -39,6 +39,47 @@ The build produces the position-independent static library
 `psx_reverb_dsp`, also available to parent CMake projects as
 `psx_reverb::dsp`.
 
+## VST3 plug-in
+
+The VST3 wrapper uses Steinberg's MIT-licensed
+[VST3 SDK](https://github.com/steinbergmedia/vst3sdk), pinned to
+`v3.8.0_build_66`. CMake downloads it into the selected build directory, so
+there is no SDK source in this repository.
+
+On macOS, install CMake, Git, and the Apple Command Line Tools:
+
+```sh
+xcode-select --install
+```
+
+Then configure and build:
+
+```sh
+cmake --preset vst3-debug
+cmake --build --preset vst3-debug
+```
+
+The resulting bundle is:
+
+```text
+build/vst3-debug/VST3/Debug/PSXReverb.vst3
+```
+
+To make it available to audio hosts, copy the bundle to the user plug-in
+directory at `~/Library/Audio/Plug-Ins/VST3/`, then rescan plug-ins in the
+host.
+
+The plug-in includes a compact VSTGUI editor with a preset menu, Wet, Dry, and
+Master controls, editable dB values, and a Bypass button. The controls are
+standard VST3 parameters, so they also remain available for host automation
+and generic host editors. Parameter values and the selected preset are saved
+with the host project.
+
+The SDK's CMake scripts normally detect the full Xcode application. The
+provided VST3 presets supply the supported Xcode 16 compatibility value so
+the smaller Apple Command Line Tools installation can build the bundle with
+the Unix Makefiles generator.
+
 ## Basic use
 
 ```cpp
@@ -77,6 +118,7 @@ src/dsp/parameters.hpp            Public parameters and preset identifiers
 src/dsp/psx_reverb.hpp            Host-independent DSP interface
 src/dsp/psx_reverb.cpp            Reverb processing and register conversion
 src/dsp/psx_reverb_presets.hpp    Complete standard SPU register tables
+src/vst3/                         Minimal VST3 processor and controller
 ```
 
 ## License and provenance
