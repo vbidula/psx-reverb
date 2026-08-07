@@ -25,6 +25,32 @@
         "CMAKE_BUILD_TYPE": "Release",
         "CMAKE_EXPORT_COMPILE_COMMANDS": false
       }
+    },
+    {
+      "name": "vst3-debug",
+      "displayName": "VST3 Debug",
+      "inherits": "debug",
+      "binaryDir": "${sourceDir}/build/vst3-debug",
+      "cacheVariables": {
+        "PSX_REVERB_BUILD_VST3": true,
+        "XCODE_VERSION": "16.0"
+      },
+      "environment": {
+        "XCODE_VERSION": "16.0"
+      }
+    },
+    {
+      "name": "vst3-release",
+      "displayName": "VST3 Release",
+      "inherits": "release",
+      "binaryDir": "${sourceDir}/build/vst3-release",
+      "cacheVariables": {
+        "PSX_REVERB_BUILD_VST3": true,
+        "XCODE_VERSION": "16.0"
+      },
+      "environment": {
+        "XCODE_VERSION": "16.0"
+      }
     }
   ],
   "buildPresets": [
@@ -35,6 +61,16 @@
     {
       "name": "release",
       "configurePreset": "release"
+    },
+    {
+      "name": "vst3-debug",
+      "configurePreset": "vst3-debug",
+      "targets": ["PSXReverb"]
+    },
+    {
+      "name": "vst3-release",
+      "configurePreset": "vst3-release",
+      "targets": ["PSXReverb"]
     }
   ]
 }

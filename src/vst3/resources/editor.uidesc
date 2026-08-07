@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vstgui-ui-description version="1">
+    <fonts/>
+    <colors>
+        <color name="Background" rgba="#17191fff"/>
+        <color name="Panel" rgba="#242832ff"/>
+        <color name="Text" rgba="#e9edf4ff"/>
+        <color name="Muted Text" rgba="#9ba5b4ff"/>
+        <color name="Accent" rgba="#ef6a5bff"/>
+        <color name="Accent Dark" rgba="#9e3f37ff"/>
+        <color name="Control" rgba="#313744ff"/>
+        <color name="Control Highlighted" rgba="#464e5fff"/>
+        <color name="Frame" rgba="#505969ff"/>
+    </colors>
+    <gradients>
+        <gradient name="Button">
+            <color-stop rgba="#313744ff" start="0"/>
+            <color-stop rgba="#242832ff" start="1"/>
+        </gradient>
+        <gradient name="Button Highlighted">
+            <color-stop rgba="#ef6a5bff" start="0"/>
+            <color-stop rgba="#9e3f37ff" start="1"/>
+        </gradient>
+    </gradients>
+    <control-tags>
+        <control-tag name="Wet" tag="0"/>
+        <control-tag name="Dry" tag="1"/>
+        <control-tag name="Master" tag="2"/>
+        <control-tag name="Preset" tag="3"/>
+        <control-tag name="Bypass" tag="4"/>
+    </control-tags>
+    <template background-color="Background"
+              background-color-draw-style="filled"
+              class="CViewContainer"
+              mouse-enabled="true"
+              name="Editor"
+              opacity="1"
+              origin="0, 0"
+              size="480, 270"
+              transparent="false">
+        <view back-color="Background"
+              class="CTextLabel"
+              font="~ NormalFontVeryBig"
+              font-color="Text"
+              frame-color="Background"
+              mouse-enabled="false"
+              origin="20, 15"
+              size="260, 30"
+              style-no-frame="true"
+              text-alignment="left"
+              title="PSX REVERB"
+              transparent="true"/>
+        <view back-color="Background"
+              class="CTextLabel"
+              font="~ NormalFontSmall"
+              font-color="Muted Text"
+              frame-color="Background"
+              mouse-enabled="false"
+              origin="22, 42"
+              size="250, 18"
+              style-no-frame="true"
+              text-alignment="left"
+              title="PlayStation SPU reverb"
+              transparent="true"/>
+
+        <view back-color="Background"
+              class="CTextLabel"
+              font="~ NormalFontSmall"
+              font-color="Muted Text"
+              frame-color="Background"
+              mouse-enabled="false"
+              origin="20, 72"
+              size="55, 25"
+              style-no-frame="true"
+              text-alignment="left"
+              title="PRESET"
+              transparent="true"/>
+        <view back-color="Control"
+              class="COptionMenu"
+              control-tag="Preset"
+              font="~ NormalFont"
+              font-color="Text"
+              frame-color="Frame"
+              frame-width="1"
+              menu-check-style="true"
+              menu-popup-style="true"
+              mouse-enabled="true"
+              origin="78, 68"
+              round-rect-radius="5"
+              size="245, 30"
+              style-round-rect="true"
+              text-alignment="left"
+              text-inset="10, 0"
+              transparent="false"
+              wants-focus="true"/>
+        <view class="CTextButton"
+              control-tag="Bypass"
+              font="~ NormalFontSmall"
+              frame-color="Frame"
+              frame-color-highlighted="Accent Dark"
+              frame-width="1"
+              gradient="Button"
+              gradient-highlighted="Button Highlighted"
+              kick-style="false"
+              mouse-enabled="true"
+              origin="351, 68"
+              round-radius="5"
+              size="109, 30"
+              text-alignment="center"
+              text-color="Text"
+              text-color-highlighted="Text"
+              title="BYPASS"
+              transparent="false"
+              wants-focus="true"/>
+
+        <view angle-range="270"
+              angle-start="135"
+              circle-drawing="true"
+              class="CKnob"
+              control-tag="Wet"
+              corona-color="Accent"
+              corona-drawing="true"
+              corona-inset="6"
+              corona-outline="true"
+              handle-color="Text"
+              handle-line-width="3"
+              handle-shadow-color="Background"
+              mouse-enabled="true"
+              origin="52, 116"
+              size="84, 84"
+              transparent="true"
+              value-inset="7"
+              wants-focus="true"
+              wheel-inc-value="0.01"
+              zoom-factor="1.5"/>
+        <view angle-range="270"
+              angle-start="135"
+              circle-drawing="true"
+              class="CKnob"
+              control-tag="Dry"
+              corona-color="Accent"
+              corona-drawing="true"
+              corona-inset="6"
+              corona-outline="true"
+              handle-color="Text"
+              handle-line-width="3"
+              handle-shadow-color="Background"
+              mouse-enabled="true"
+              origin="198, 116"
+              size="84, 84"
+              transparent="true"
+              value-inset="7"
+              wants-focus="true"
+              wheel-inc-value="0.01"
+              zoom-factor="1.5"/>
+        <view angle-range="270"
+              angle-start="135"
+              circle-drawing="true"
+              class="CKnob"
+              control-tag="Master"
+              corona-color="Accent"
+              corona-drawing="true"
+              corona-inset="6"
+              corona-outline="true"
+              handle-color="Text"
+              handle-line-width="3"
+              handle-shadow-color="Background"
+              mouse-enabled="true"
+              origin="344, 116"
+              size="84, 84"
+              transparent="true"
+              value-inset="7"
+              wants-focus="true"
+              wheel-inc-value="0.01"
+              zoom-factor="1.5"/>
+
+        <view back-color="Background"
+              class="CTextLabel"
+              font="~ NormalFontSmall"
+              font-color="Text"
+              frame-color="Background"
+              mouse-enabled="false"
+              origin="52, 201"
+              size="84, 18"
+              style-no-frame="true"
+              text-alignment="center"
+              title="WET"
+              transparent="true"/>
+        <view back-color="Background"
+              class="CTextLabel"
+              font="~ NormalFontSmall"
+              font-color="Text"
+              frame-color="Background"
+              mouse-enabled="false"
+              origin="198, 201"
+              size="84, 18"
+              style-no-frame="true"
+              text-alignment="center"
+              title="DRY"
+              transparent="true"/>
+        <view back-color="Background"
+              class="CTextLabel"
+              font="~ NormalFontSmall"
+              font-color="Text"
+              frame-color="Background"
+              mouse-enabled="false"
+              origin="344, 201"
+              size="84, 18"
+              style-no-frame="true"
+              text-alignment="center"
+              title="MASTER"
+              transparent="true"/>
+
+        <view back-color="Panel"
+              class="CTextEdit"
+              control-tag="Wet"
+              font="~ NormalFontSmall"
+              font-color="Muted Text"
+              frame-color="Frame"
+              frame-width="1"
+              immediate-text-change="false"
+              mouse-enabled="true"
+              origin="52, 225"
+              round-rect-radius="4"
+              size="84, 25"
+              style-round-rect="true"
+              text-alignment="center"
+              transparent="false"
+              wants-focus="true"/>
+        <view back-color="Panel"
+              class="CTextEdit"
+              control-tag="Dry"
+              font="~ NormalFontSmall"
+              font-color="Muted Text"
+              frame-color="Frame"
+              frame-width="1"
+              immediate-text-change="false"
+              mouse-enabled="true"
+              origin="198, 225"
+              round-rect-radius="4"
+              size="84, 25"
+              style-round-rect="true"
+              text-alignment="center"
+              transparent="false"
+              wants-focus="true"/>
+        <view back-color="Panel"
+              class="CTextEdit"
+              control-tag="Master"
+              font="~ NormalFontSmall"
+              font-color="Muted Text"
+              frame-color="Frame"
+              frame-width="1"
+              immediate-text-change="false"
+              mouse-enabled="true"
+              origin="344, 225"
+              round-rect-radius="4"
+              size="84, 25"
+              style-round-rect="true"
+              text-alignment="center"
+              transparent="false"
+              wants-focus="true"/>
+    </template>
+</vstgui-ui-description>
